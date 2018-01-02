@@ -29,6 +29,42 @@ for i=1:9
     end
 end
 
+function block = getblock(X,i,j)
+%GETBLOCK get all existed values in the current block.
+%   Detailed explanation goes here
+block = [];
+I = floor(i/3-0.01);
+J = floor(j/3-0.01);
+for r = (I*3+1):(I*3+3)
+    for c = (J*3+1):(J*3+3)
+        if X(r,c) ~= 0
+            block = [block,X(r,c)];
+        end
+    end
+end
+end
+
+function column = getcolumn(X,i,j)
+%GETCOLUMN Summary of this function goes here
+%   Detailed explanation goes here
+column = [];
+for r = 1:9
+    if X(r,j) ~= 0
+        column = [column,X(r,j)];
+    end
+end
+end
+
+function row = getrow(X,i,j)
+%GETROW Summary of this function goes here
+%   Detailed explanation goes here
+row = [];
+for c = 1:9
+    if X(i,c) ~= 0
+        row = [row,X(i,c)];
+    end
+end
+end
 
 end
 
